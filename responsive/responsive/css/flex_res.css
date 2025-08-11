@@ -1,0 +1,76 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+h1 {
+  font-size: 5vw;
+}
+h2 {
+  /* font-size: 3vw; */
+  /* font-size: clamp(최소값 , 기본값 , 최대값); */
+  font-size: clamp(14px, 5vw, 32px);
+}
+/* 5vw = 32px
+→ 1vw = 32 / 5 = 6.4px
+→ 100vw = 6.4 * 100 = 640px
+ */
+/* 
+ 5vw = 16px
+→ 1vw = 16 / 5 = 3.2px
+→ 100vw = 3.2 * 100 = 320px */
+.container {
+  width: 100%;
+  background-color: bisque;
+}
+.card {
+  width: 90%;
+  max-width: 700px;
+  min-width: 270px;
+  background-color: aquamarine;
+  margin: auto;
+}
+.card li {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+  /* gap: 20px; */
+  padding: 2%;
+}
+.img-box {
+  width: 60%;
+}
+.img-box img {
+  display: block;
+  width: 100%;
+}
+.card-txt {
+  width: 40%;
+  background-color: blueviolet;
+}
+/* 반응형 */
+@media (max-width: 768px) {
+  .card li {
+    flex-direction: column;
+  }
+  .img-box {
+    width: 100%;
+  }
+  .card-txt {
+    width: 100%;
+    padding: 2%;
+  }
+}
+@media (max-width: 390px) {
+  .card-txt h3 {
+    font-size: 16px;
+  }
+  .card-txt p {
+    font-size: 14px;
+  }
+}
